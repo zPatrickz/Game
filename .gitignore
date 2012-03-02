@@ -1,0 +1,5 @@
+# obj and lib
+*.[oa]
+
+# Emacs autosave file
+*~
