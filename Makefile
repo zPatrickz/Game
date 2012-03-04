@@ -1,3 +1,12 @@
+###############################
+# for color
+###############################
+OFFSET=\033[41G
+COLOR=\033[1;31m
+RESET=\033[0m
+CLEAR=\033[H\033[J
+
+###############################
 CC = gcc
 AS = gas
 LD = ld
@@ -26,10 +35,9 @@ OBJS = main.o \
 # (in main.c)
 game: $(OBJS)
 	$(LD) $(LDFLAGS) -e game_init -Ttext 0x00100000 -o game $(OBJS)
-	@echo ""
-	@echo -e "\e[0;31mCongratulations!\e[0m"
+	@echo "$(COLOR)Congratulations!$(RESET)"
 	@echo "You have successfully *Make* it work!"
-	@echo  -e "Why not \e[0;31mcommit \e[0mit now?"
+	@echo  "Why not $(COLOR)commit $(CLEAR)now?"
 	@echo "(or you may wanna test it first, anyway, good luck!)"
 
 -include *.d
