@@ -3,7 +3,7 @@
 ###############################
 OFFSET=\033[41G
 COLOR=\033[1;31m
-RESET=\033[0;m
+RESET=\033[0m
 CLEAR=\033[H\033[J
 
 ###############################
@@ -37,7 +37,7 @@ game: $(OBJS)
 	$(LD) $(LDFLAGS) -e game_init -Ttext 0x00100000 -o game $(OBJS)
 	@echo "$(COLOR)Congratulations!$(RESET)"
 	@echo "You have successfully *Make* it work!"
-	@echo  "Why not $(COLOR)commit $(CLEAR)now?"
+	@echo  "Why not $(COLOR)commit $(RESET)now?"
 	@echo "(or you may wanna test it first, anyway, good luck!)"
 
 -include *.d
